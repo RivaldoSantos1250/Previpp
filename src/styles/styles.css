@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(#3b82f6, #dfe7fc)
+    background: linear-gradient(#000000, #333232)
 }
 
 #container {
@@ -69,7 +69,7 @@ body {
     align-items: center;
     justify-content: space-around;
     gap: 20px;
-    background: linear-gradient(90deg, #5a7cdc, #606dde);
+    background: linear-gradient(90deg, #8f9bdd, #0404ff);
     color: #fff;
     border-radius: 20px;
     padding: 20px;
