@@ -4,7 +4,9 @@ document.querySelector('#search').addEventListener('submit', async (event) =>{
     const cityName = document.querySelector('#city_name').value;
 
     if (!cityName) {
-        return showAlert('Digite uma cidade...')
+        document.querySelector("#weather").classList.remove('show');
+        showAlert('Digite uma cidade...')
+        return;
     }
 
     const apiKey = '86f17842ed3b4e77d3fa4255e3f6dd5e';
@@ -26,6 +28,7 @@ document.querySelector('#search').addEventListener('submit', async (event) =>{
             humidity: json.main.humidity,
         })
     } else {
+        document.querySelector("#weather").classList.remove('show');
         showAlert('Não foi possível localizar...')
     }
 });
@@ -44,7 +47,8 @@ function showInfo(json) {
 
     document.querySelector('#temp_min').innerHTML = `${json.tempMin.toFixed()}<sup>c°<sup>`;
 
-    document.querySelector('#humidity').innerHTML = `${json.humidty}%`;
+    document.querySelector('#humidity').innerHTML = `${json.humidity}%`;
+    document.querySelector('#wind').innerHTML = `${json.windSpeed.toFixed(1)}Km/h`;
 }
 
 function showAlert(msg) {
